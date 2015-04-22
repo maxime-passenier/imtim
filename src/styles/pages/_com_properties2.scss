@@ -1,0 +1,138 @@
+.com_properties{
+
+  @media (min-width: 1200px) {
+    .row-container{ padding: 0; }
+  }
+  #wrapper #content-row { padding-top: 80px; }
+
+
+  #content-row #component {
+    padding: 0 !important;
+  }
+
+  .row-fluid [class*="span"] {
+    min-height: 0;
+  }
+  #PropertyListRegion {
+    display: table;
+    width: 100%;
+    .property-list-header {
+      display: none;
+    }
+    .premises-search {
+      transition: all 300ms ease;
+      background: rgba(0,0,0,0.5);
+      position: fixed;
+      top: 80px;
+      z-index: 2;
+      bottom: 51px;
+      left: 0px;
+      width: 0;
+    }
+    .property-list {
+      padding: 0;
+      border-top: 15px solid black;
+      border-left: 1px solid black;
+      transition: all 300ms ease;
+      position: fixed;
+      z-index: 1;
+      top: $navigation-height;
+      left: 15px;
+      right: 0;
+      bottom: 60px;
+      overflow: auto;
+      .property {
+        opacity: 0;
+        margin: 0px;
+        margin-left: 0px !important;
+        padding: 0px;
+        box-sizing: border-box;
+        border: none;
+        border-right: 15px solid black;
+        border-bottom: 15px solid black;
+        height: 300px;
+        width: 33.333%;
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+        .property-info { display: none !important; }
+        .premise-type {
+          @include bold-blocked-font();
+          @include centerIt();
+          transition: all 300ms ease;
+          z-index: 1;
+          white-space: nowrap;
+        }
+        .premises-details {
+          @include centerIt();
+          background-color: rgba(0, 0, 0, 0.6);
+          border: 5px solid $base-color;
+          opacity: 0;
+          padding: 10px 20px;
+          transition: all 300ms ease;
+          top: 70%;
+          text-align: center;
+          .premise-rooms { display: none; }
+        }
+        .pic {
+          transition: all 500ms ease;
+          opacity: 0.5;
+          height: 100%;
+          width: 100%;
+          .marquee { display: none; }
+        }
+        &:hover {
+          .pic { opacity: 1; transform: scale(1.05) }
+          .property-info .property-top { display: block; transform: translateX(-50%) translateY(-50%);}
+          .premise-type { top: 30%; opacity: 0; }
+          .premises-details { top: 50%; opacity: 1; }
+        }
+      }
+      .property:hover,
+      .property:first-child {
+        .pic {
+          transform: scale(110%) translateX(-5%) translateY(-5%);
+        }
+      }
+      .property:nth-last-child(1), .property:nth-last-child(2) {
+        width: 50%;
+      }
+    }
+    .pagination {
+      display: none;
+      .title { display: none; }
+      a, span { line-height: normal; margin: 0; border: none; padding: 10px 20px; border-radius: 0 !important; margin-top: 5px; margin-left: 2.5px; margin-right: 2.5px }
+    }
+    .links { display: none;  }
+    .sortproperties {  display: none;  }
+
+    //
+    // state: premises-state-initialized
+    //
+    &.premises-state-initialized {
+      .property { transform: translateY(100px); }
+    }
+    //
+    // state: premises-state-active
+    //
+    &.premises-state-active {
+      .property { transition: all 400ms ease-in-out; opacity: 1; transform: translateY(0); }
+      @for $i from 1 through 30 {
+        .property:nth-child(#{$i}){
+          $transDelay : $i * 50ms - 50ms;
+          transition-delay: $transDelay
+        }
+      }
+    }
+
+    //
+    // state: premises-state-search
+    //
+    &.premises-state-search {
+      .premises-search {  width: 100%; }
+      .property-list { transform: translatex(350px); }
+      .property { transform: scale(0.9);}
+      .premise-type { opacity: 0.4}
+    }
+  }
+}

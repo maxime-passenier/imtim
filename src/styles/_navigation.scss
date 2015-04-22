@@ -1,0 +1,30 @@
+@include coco-selector(){
+  #header-row {
+    display: block;
+    height: $navigation-height;
+    position: fixed;
+    width: 100%;
+    z-index: $z-index-navigation;
+
+    .row-container #logo {
+      text-align: left;
+      img { margin-left: 15px; }
+    }
+
+    .navigation ul.sf-menu{
+      float: right;
+
+      li > a,
+      li > span {
+        font-family: $font-header;
+        text-transform: initial;
+        font-size: 16px;
+      }
+    }
+
+    #Phone-number {
+      display: none;
+    }
+  }
+
+}

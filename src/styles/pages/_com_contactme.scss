@@ -1,0 +1,23 @@
+.com_contactme {
+  #content-row #component {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    max-width: 100%;
+    padding: 30px;
+
+    #OwnerLoginRegion {
+      margin-bottom: 0;
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+  }
+  #showcase-row {
+    background-image: url('../assets/images/bg-office-11.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    * {display: none}
+  }
+}

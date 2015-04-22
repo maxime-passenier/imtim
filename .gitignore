@@ -1,0 +1,22 @@
+# OSX specifics #
+#################
+
+*.DS_Store
+
+# IDE settings #
+################
+
+/.idea
+
+# Compiled source #
+###################
+
+/.sass-cache
+/target
+/__working
+
+# Node resources #
+##################
+
+/node_modules
+/npm-debug.log

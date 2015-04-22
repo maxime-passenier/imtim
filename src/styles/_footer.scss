@@ -1,0 +1,17 @@
+.body__ {
+  #footer-wrapper {
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    height: auto;
+    width: 100%;
+    z-index: $z-index-navigation;
+    #copyright-row,
+    #copyright-row a{
+      font-family: verdana;
+      font-size: 12px;
+      color: $shy-color !important;
+      padding: 10px
+    }
+  }
+}

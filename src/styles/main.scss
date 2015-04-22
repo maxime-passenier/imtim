@@ -1,0 +1,17 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300|PT+Sans+Caption:400,700);
+@import "variables";
+@import "mixins";
+
+.body__ {
+  background-color: $bg-color;
+}
+
+#back-top { display: none !important;}
+
+@import "navigation";
+@import "content";
+@import "footer";
+@import "form";
+@import "pages/com_ownerlogin";
+@import "pages/com_contactme";
+@import "pages/com_properties2";
