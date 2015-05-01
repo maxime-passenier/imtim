@@ -82,7 +82,7 @@
           .marquee { display: none; }
         }
         &:hover {
-          .pic { opacity: 1; transform: scale(1.05) }
+          .pic { opacity: 1; }
           .property-info .property-top { display: block; transform: translateX(-50%) translateY(-50%);}
           .premise-type { top: 30%; opacity: 0; }
           .premises-details { top: 50%; opacity: 1; }
